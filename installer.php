@@ -210,6 +210,8 @@ COMMIT;";
         } else {
             $db_schema_sucess = "Database schema has been created successfully";
         }
+		mysqli_close($con);
+		$con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
         $sql = "CREATE PROCEDURE `get_review`(IN `type` VARCHAR(255), IN `target` VARCHAR(10))
    NO SQL
 BEGIN
@@ -227,6 +229,8 @@ END";
         } else {
             $db_schema_sucess = "Database schema has been created successfully";
         }
+		mysqli_close($con);
+		$con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
         $sql = "CREATE PROCEDURE `insert_review`(IN `author` VARCHAR(255), IN `target` VARCHAR(10), IN `type` VARCHAR(255))
    NO SQL
 BEGIN
@@ -249,6 +253,8 @@ END";
         } else {
             $db_schema_sucess = "Database schema has been created successfully";
         }
+		mysqli_close($con);
+		$con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
         $sql = "CREATE PROCEDURE `login`(IN `u_email` VARCHAR(255), IN `u_pass` VARCHAR(255), IN `u_session` TEXT)
    NO SQL
 BEGIN
