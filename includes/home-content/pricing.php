@@ -69,27 +69,20 @@
 
 <?php
 if (isset($_POST['sendMess'])) {
-
     $email = $_POST['u_email'];
     $type = $_POST['u_payment'];
     $userMessage = $_POST['u_mess'];
-
     $txt = "email: $email -- type: $type -- message: $userMessage\n";
-
     $transport = new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls');
-    $transport->setUsername('work000test@gmail.com');
-    $transport->setPassword('32145688+++');
-
+    $transport->setUsername('EMAIL');
+    $transport->setPassword('EMAIL');
     $mailer = new Swift_Mailer($transport);
-
     $txt2 = "This person would like to contact you";
     $message = new Swift_Message('Notification!');
-    $message->setFrom(['work000test@gmail.com' => 'YourMovies Support Team']);
-    $message->setTo(['aymanhun@gmail.com' => 'Ayman Hunjul']);
+    $message->setFrom(['from@gmail.com' => 'SkyFall Support Team']);
+    $message->setTo(['to@gmail.com' => 'Ayman Hunjul']);
     $message->setBody("This person would like to contact you\nemail: $email\ntype: $type\nmessage: $userMessage");
-
     $result = $mailer->send($message);
-
     $myfile = fopen("admin/pages/payments.txt", "a+");
     fwrite($myfile, $txt);
     fclose($myfile);
