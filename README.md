@@ -2,7 +2,7 @@
 
 ## Links:
 
-+ [Live Preview](https://bit.ly/2YKO0VP)
++ [Live Preview](http://skyfall2020.000webhostapp.com/)
 
 ## Quick start
 
